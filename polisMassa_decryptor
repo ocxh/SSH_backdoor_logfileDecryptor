@@ -8,7 +8,7 @@ int main() {
     fp = fopen(filename, "rb");   
 
     if (fp == NULL) {
-        perror("Error opening file");
+        perror("[FILE ERROR] Can not found /var/run/sshd.sync");
         return 1;
     }
 
@@ -18,7 +18,7 @@ int main() {
 
     char *buffer = (char*)malloc(filesize);
     if (buffer == NULL) {
-        perror("Memory allocation error");
+        perror("[MEMORY ERROR] Memory allocation error");
         fclose(fp);
         return 1;
     }
